@@ -16,25 +16,38 @@
 
 <h:head>
     <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
 </h:head>
 
-<h:body>
+<h:body styleClass="body">
+    <div class="header">
+        <h:outputText value="Основная страница - Лабораторная работа 3" styleClass="header-text"/>
+    </div>
+    <div class="input-data">
+        <h:outputLabel for="corX" value="Введите данные" styleClass="input-header-text" />
     <h:form >
-        <h:outputLabel for="corX" value="Введите X: "/>
+        <div>
+        <h:outputLabel for="corX" value="Введите X: " styleClass="input-text" />
         <h:inputText id="corX" maxlength="5" autocomplete="off" a:placeholder="Число от -5 до 3..." value="#{informationList.information.coordinateX}">
         </h:inputText>
-        <h:outputLabel for="corY" value="Введите Y: "/>
+        </div>
+        <div>
+        <h:outputLabel for="corY" value="Введите Y: " styleClass="input-text" />
         <h:inputText id="corY" maxlength="5" autocomplete="off" a:placeholder="Число от -2 до 2..." value="#{informationList.information.coordinateY}">
         </h:inputText>
-        <h:outputLabel for="corR" value="Выберите R" />
+        </div>
+        <div>
+        <h:outputLabel for="corR" value="Выберите R" styleClass="input-text" />
         <h:selectOneMenu id="corR" value="#{informationList.information.valueR}">
             <f:selectItem itemValue="1" itemLabel="ir 1"/>
             <f:selectItem itemValue="2" itemLabel="ir 2"/>
         </h:selectOneMenu>
+        </div>
 
         <h:commandButton value="ПОЕХАЛИ!" action="#{informationList.add}"/>
         <h:commandButton value="очистить!" action="#{informationList.deleteList}"/>
     </h:form>
+    </div>
 
 
     <div class="result-table_container">
