@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Created by IntelliJ IDEA.
+  User: ramzes
+  Date: 11.04.2021
+  Time: 13:33
+-->
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html" xmlns:a="http://java.sun.com/jsf/composite"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+
+<h:head>
+    <title>Title</title>
+</h:head>
+
+<h:body>
+    <h:form >
+        <h:outputLabel for="corX" value="Введите X: "/>
+        <h:inputText id="corX" maxlength="5" autocomplete="off" a:placeholder="Число от -5 до 3..." value="#{informationList.information.coordinateX}">
+        </h:inputText>
+        <h:outputLabel for="corY" value="Введите Y: "/>
+        <h:inputText id="corY" maxlength="5" autocomplete="off" a:placeholder="Число от -2 до 2..." value="#{informationList.information.coordinateY}">
+        </h:inputText>
+        <h:outputLabel for="corR" value="Выберите R" />
+        <h:selectOneMenu id="corR" value="#{informationList.information.valueR}">
+            <f:selectItem itemValue="1" itemLabel="ir 1"/>
+            <f:selectItem itemValue="2" itemLabel="ir 2"/>
+        </h:selectOneMenu>
+
+        <h:commandButton value="ПОЕХАЛИ!" action="#{informationList.add}"/>
+        <h:commandButton value="очистить!" action="#{informationList.deleteList}"/>
+    </h:form>
+
+
+    <div class="result-table_container">
+        <h:dataTable styleClass="result-table" value="#{informationList.informationList}" var="information">
+            <h:column headerClass="result-table__column result-table__column_coords">
+                <f:facet name="header">X</f:facet>
+                <h:outputText value="#{information.coordinateX}"/>
+            </h:column>
+            <h:column headerClass="result-table__column result-table__column_coords">
+                <f:facet name="header">Y</f:facet>
+                <h:outputText value="#{information.coordinateY}"/>
+            </h:column>
+            <h:column headerClass="result-table__column result-table__column_coords">
+                <f:facet name="header">R</f:facet>
+                <h:outputText value="#{information.valueR}"/>
+            </h:column>
+            <h:column headerClass="result-table__column result-table__column_hitres">
+                <f:facet name="header">Результат</f:facet>
+                <h:outputText value="#{information.result}"/>
+            </h:column>
+        </h:dataTable>
+    </div>
+
+</h:body>
+
+</html>
