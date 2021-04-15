@@ -1,0 +1,42 @@
+/*#input-div {*/
+/*    width: 200px;*/
+/*    background: #ccc;*/
+/*    padding: 5px;*/
+/*    padding-right: 100px;*/
+/*    border: solid 1px black;*/
+/*    float: left;*/
+/*    margin: 50px; !* Отступы вокруг *!*/
+/*}*/
+.body {
+    position: relative;
+}
+.header {
+    width: 99%;
+    background: #ccc;
+    padding: 5px;
+    height: 30px;
+    /*padding-right: 100px;*/
+    border: solid 1px black;
+    /*float: left;*/
+    /*margin: 5px 5px 5px; !* Отступы вокруг *!*/
+    position: absolute;
+    text-align: center;
+}
+.input-data {
+    width: 45%;
+    height: 500px;
+    background: #ccc;
+    position: relative;
+    border: solid 1px black;
+    top: 50px;
+    text-align: center;
+}
+.header-text {
+    font-size: 30px;
+}
+.input-text {
+    font-size: 30px;
+}
+.input-header-text {
+    font-size: 30px;
+}
